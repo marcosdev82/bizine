@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import logo from '../bizine/src/assets/logo.png';
+import bgImage from '../bizine/src/assets/background.jpg';
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-
+      <ImageBackground  source={bgImage} style={styles.bgImage}>
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor='#f1f1f1'/>
 
         <Image source={logo} style={styles.logo} />
@@ -23,7 +24,7 @@ export default function App() {
             <Text style={styles.textButton}>Entrar</Text>
           </TouchableOpacity>
         </View>
-
+      </ImageBackground>
     </View>
   );
 }
@@ -36,8 +37,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center', 
   },
+  bgImage: {
+    flex: 1,
+    resizeMode: "cover", // ou 'contain' conforme necessário
+    justifyContent: 'start',
+    flexDirection: 'column',
+    alignItems: 'center', 
+    width: '100%',
+  },
   content: {
-    width: '90%',
+    width: '80%',
   },
   logo: {
     marginTop: 100,
@@ -45,7 +54,7 @@ const styles = StyleSheet.create({
   },
   form: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor:'#F9DB13E5',
     padding: 30,
     paddingTop: 50,
     paddingBottom: 50,
@@ -58,7 +67,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontSize: 22,
+    fontSize: 26,
     marginBottom: 30,
     flexDirection: 'column',
     justifyContent: 'center',
@@ -67,15 +76,16 @@ const styles = StyleSheet.create({
     fontWeight: '600'
   },
   buttonSignIn: {
-    backgroundColor: '#18161a',
+    backgroundColor: '#2B2B2B',
     padding: 15,
+    height: 55,
     borderRadius: 25,
     alignItems: 'center',
     marginTop: 10,
     width: '100%',
   },
   textButton: {
-    color: '#fff'
-  }
+    color: '#fff',
+  },
 
 });
