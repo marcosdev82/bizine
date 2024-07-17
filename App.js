@@ -8,7 +8,8 @@ import bgImage from '../bizine/src/assets/background.jpg';
 export default function App() {
   return (
     <View style={styles.container}>
-      <ImageBackground  source={bgImage} style={styles.bgImage}>
+        <ImageBackground  source={bgImage} style={styles.bgImage} />
+
         <StatusBar barStyle="dark-content" translucent={true} backgroundColor='#f1f1f1'/>
 
         <Image source={logo} style={styles.logo} />
@@ -23,8 +24,20 @@ export default function App() {
           <TouchableOpacity style={styles.buttonSignIn}>
             <Text style={styles.textButton}>Entrar</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity style={styles.forgotPassword}>
+            <Text style={styles.textButton}>Esqueci minha senha</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.buttonSignInFacebook}>
+            <Text style={styles.textButton}>Entrar com Facebook</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.buttonCreateAccount}>
+            <Text style={styles.textButtonLite}>Criar um conta</Text>
+          </TouchableOpacity>
+
         </View>
-      </ImageBackground>
     </View>
   );
 }
@@ -39,25 +52,26 @@ const styles = StyleSheet.create({
   },
   bgImage: {
     flex: 1,
-    resizeMode: "cover", // ou 'contain' conforme necessário
-    justifyContent: 'start',
-    flexDirection: 'column',
-    alignItems: 'center', 
     width: '100%',
+    height: '100%',
+    position: 'absolute',
+    resizeMode: 'cover',
   },
   content: {
-    width: '80%',
+    width: '85%',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   logo: {
-    marginTop: 100,
-    marginBottom: 100,
+    marginTop: 80,
+    marginBottom: 70,
   },
   form: {
     width: '100%',
     backgroundColor:'#F9DB13E5',
     padding: 30,
-    paddingTop: 50,
-    paddingBottom: 50,
+    paddingTop: 40,
+    paddingBottom: 60,
     borderRadius: 8,
     gap: 15,
   },
@@ -68,7 +82,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 26,
-    marginBottom: 30,
+    marginBottom: 16,
     flexDirection: 'column',
     justifyContent: 'center',
     alignContent: 'center',
@@ -84,8 +98,33 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: '100%',
   },
+  buttonSignInFacebook: {
+    backgroundColor: '#385593',
+    padding: 15,
+    height: 55,
+    borderRadius: 25,
+    alignItems: 'center',
+    marginTop: 10,
+    width: '100%',
+  },
+  buttonCreateAccount: {
+    backgroundColor: '#E5E9F0',
+    padding: 15,
+    height: 55,
+    borderRadius: 25,
+    alignItems: 'center',
+    marginTop: 10,
+    width: '100%',
+  },
   textButton: {
     color: '#fff',
   },
+  textButtonLite: {
+    color: '#2B2B2B',
+  },
+  forgotPassword: {
+    margin: 10,
+    marginBottom: 5,
+  }
 
 });
